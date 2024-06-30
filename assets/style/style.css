@@ -1,0 +1,333 @@
+@font-face {
+  font-family: "yekan";
+  src: url(../fonts/YekanBakh-Regular.ttf);
+}
+:root {
+  --conbgcr: rgb(239, 239, 239);
+  --btnbgcr: rgb(228, 235, 132);
+  --btncr: rgb(5, 0, 0);
+  --h3bgcr: rgb(236, 246, 134);
+  --h3cr: rgb(68, 68, 68);
+  --libgcr: rgb(197, 197, 197);
+  --bxbgcr: rgb(228, 235, 132);
+  --darkBlue: #5b5f7e;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "yekan";
+  font-size: 16px;
+}
+.container {
+  width: 65vw;
+  margin: 8rem auto 0;
+  padding: 3rem;
+  background-color: var(--conbgcr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0px 0px 6px 1px #000000;
+}
+.manageBtn {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  top: 13px;
+  right: 16px;
+  gap: 20px;
+}
+.bx-message-square-edit {
+  color: var(--h3bgcr);
+}
+
+.bx {
+  font-size: 22px;
+  cursor: pointer;
+  text-shadow: 0px 0px 1px black;
+}
+.bx-message-square-x:hover {
+  transition: all 0.1s ease-in-out;
+  color: red;
+}
+.bx-message-square-edit:hover {
+  color: rgb(93, 105, 156);
+  transition: all 0.1s ease-in-out;
+}
+.noteManage {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 26px;
+  border-bottom: 2px solid #bebebe;
+}
+.noteManage #colors {
+  width: 20%;
+  margin-left: 28%;
+  display: flex;
+  gap: 5px;
+  padding: 0 4px;
+  border-radius: 6px;
+  background-color: var(--btnbgcr);
+  border: 1px solid rgb(132, 132, 132);
+  transition: all 0.08s linear;
+}
+.noteManage #colors:hover {
+  border-color: #cccccc;
+  box-shadow: 0px 0px 5px 1px rgb(168, 168, 168);
+}
+.noteManage #colors span:hover {
+  transform: scale(1.2);
+  /* box-shadow: 0px 0px 2px 1px rgb(181, 181, 181); */
+  border: none;
+}
+#colors span {
+  transition: all 0.08s linear;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgb(161, 161, 161);
+  cursor: pointer;
+  margin: auto;
+}
+#colors :nth-child(1) {
+  background-color: #fff1c2;
+}
+#colors :nth-child(2) {
+  background-color: #fbb1d3;
+}
+#colors :nth-child(3) {
+  background-color: #b3f9ff;
+}
+#colors :nth-child(4) {
+  background-color: #ade4a2;
+}
+#colors :nth-child(5) {
+  background-color: #fff5cb;
+}
+#colors :nth-child(6) {
+  background-color: #ffd1ff;
+}
+#colors :nth-child(7) {
+  background-color: #b1e6f3;
+}
+
+#textInput {
+  border-radius: 6px;
+  width: 48%;
+  height: 40px;
+  padding-left: 1rem;
+  border: 2px solid #7c7c7c;
+  outline: none;
+}
+#titleInput {
+  border-radius: 6px;
+  width: 48%;
+  border: 2px solid #7c7c7c;
+  outline: none;
+  padding-left: 1rem;
+}
+#addNote {
+  width: 20%;
+  height: 40px;
+  background-color: var(--btnbgcr);
+  color: var(--btncr);
+  border-radius: 6px;
+  border: 1px solid rgb(132, 132, 132);
+  margin: 0 auto 0 21px;
+  transition: all 0.08s linear;
+  cursor: pointer;
+}
+#addNote:hover,
+.shapeMenu .bx:hover,
+.darkLightMode .bx:hover {
+  box-shadow: 0px 0px 5px 1px rgb(168, 168, 168);
+  border: 1px solid rgb(196, 196, 196);
+}
+#notesList li {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  background-color: var(--libgcr);
+  position: relative;
+  border: 1px solid #b5b5b5;
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 3px 2px #9b9b9b;
+  transition: all 0.1s ease-in-out;
+}
+#notesList li:hover h3::before {
+  animation-name: borderFully;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+#notesList li:hover {
+  box-shadow: 0px 0px 8px 6px #cfcfcf;
+}
+.squareLi {
+  flex: 0 0 30%;
+  width: 30%;
+  min-height: 150px;
+}
+.rowLi {
+  margin: 0 auto;
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 120px;
+}
+#notesList p {
+  width: 80%;
+  padding: 0rem 10px;
+  overflow-wrap: hidden;
+  word-wrap: break-word;
+}
+#notesList {
+  margin-top: 3rem;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 5%;
+}
+h3 {
+  position: relative;
+  font-size: 20px;
+  margin-bottom: 10px;
+  background-color: var(--h3bgcr);
+  color: var(--h3cr);
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+  padding: 0.4rem 2.5rem 0.4rem 0.6rem;
+  word-wrap: break-word;
+}
+h3:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0%;
+  border-bottom: 2px solid rgb(110, 110, 110);
+  transition: all 0.5s linear;
+  animation-name: borderUnFully;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+#notesList li {
+  filter: blur(0);
+  transition: filter 0.3s;
+}
+
+#notesList li:hover {
+  filter: blur(0);
+  box-shadow: 0px 0px 8px 6px #cfcfcf;
+}
+.shapeMenu .bx {
+  position: absolute;
+  right: 317px;
+  top: 232px;
+  font-size: 34px;
+  background-color: var(--bxbgcr);
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid rgb(132, 132, 132);
+}
+.darkLightMode .bx {
+  position: absolute;
+  left: 317px;
+  top: 232px;
+  font-size: 34px;
+  background-color: var(--bxbgcr);
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid rgb(132, 132, 132);
+}
+@keyframes borderFully {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes borderUnFully {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes colorChange {
+  0% {
+    color: rgb(217, 60, 60);
+  }
+  25% {
+    color: rgb(183, 86, 210);
+  }
+  50% {
+    color: rgb(218, 204, 19);
+  }
+  70% {
+    color: rgb(142, 142, 255);
+  }
+  100% {
+    color: red;
+  }
+}
+.headText {
+  position: absolute;
+  left: 50%;
+  top: 35px;
+  transform: translateX(-50%);
+  font-size: 40px;
+}
+.bottomP {
+  width: 100%;
+  margin: 5rem auto 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+}
+.bottomP span {
+  animation-name: colorChange;
+  animation-duration: 4s;
+  margin: 0 4px;
+  animation-iteration-count: infinite;
+}
+.bottomP img {
+  width: 25px;
+  height: 25px;
+  margin-left: 13px;
+}
+/* dark class */
+.blackBody {
+  background-color: #000000e1;
+}
+.darkContainer {
+  background-color: rgb(69, 69, 69);
+}
+.darkBlue {
+  background-color: var(--darkBlue) !important;
+  box-shadow: 0px 0px 8px 4px #1d1d1d !important;
+}
+.darkInput {
+  background-color: #707070 !important;
+  color: rgb(215, 215, 215);
+}
+.darkInput::placeholder {
+  color: #2f2f2f;
+}
+.grayDark {
+  color: #9f9f9f !important;
+}
+.darkHead {
+  background-color: #888b4b !important;
+}

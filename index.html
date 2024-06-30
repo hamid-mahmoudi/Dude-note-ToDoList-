@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="assets/images/dudeIcon.png" type="image/x-icon">
+    <title>Dude Note - task 7-2</title>
+  </head>
+  <body>
+    <h2 class="headText">Take A Note Dude</h2>
+    <div class="shapeMenu"></div>
+    <div class="darkLightMode"></div>
+    <div class="container">
+      <div class="noteManage">
+        <input
+          id="titleInput"
+          type="text"
+          placeholder="Note Title... "
+          autocomplete="off"
+        />
+        <input
+          id="textInput"
+          type="text"
+          placeholder="Note Description..."
+          autocomplete="off"
+        />
+        <div id="colors">
+          <span class="colorDot"></span><span class="colorDot"></span
+          ><span class="colorDot"></span><span class="colorDot"></span
+          ><span class="colorDot"></span><span class="colorDot"></span
+          ><span class="colorDot"></span>
+        </div>
+        <button id="addNote">Add Note</button>
+      </div>
+      <div id="notesList"></div>
+    </div>
+    <p class="bottomP">Powered By <span> Hamid Mahmoudi </span>with <span>❤</span> | Dude Note <img src="assets/images/dudeIconFlip.png" alt=""></p>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
